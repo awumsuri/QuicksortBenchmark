@@ -1,0 +1,25 @@
+<html>
+<head>
+    <script src="js/jquery.2.1.4.js" type="application/javascript"></script>
+    <script src="js/QuickSort.js" type="application/javascript"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            var NUM_SORT        = 10000000;
+            var a   = [];
+            for(var i = 0; i < NUM_SORT; i++){
+                a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
+            }
+           // a =  [3,45,23,24,54,2,7,3,2,1];
+           // console.log("Before:"+a);
+            var d       = Date.now();
+            Quicksort(a, 0 , NUM_SORT-1);
+            var e       = Date.now();
+
+            console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
+        });
+    </script>
+</body>
+
+</html>
