@@ -34,7 +34,7 @@ function Partition(A, start, end){
 }
 
 
-var NUM_SORT        = 10000000;
+var NUM_SORT        = 1000000;
 var a   = [];
 for(var i = 0; i < NUM_SORT; i++){
     a[i]    = Math.floor(Math.random() * NUM_SORT)+1;

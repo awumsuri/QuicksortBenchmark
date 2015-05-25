@@ -18,4 +18,8 @@ for (var i:UInt32 = 0; i < NUM_ELEMENTS; i++) {
 
 let q:Quicksort         = Quicksort();
 Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, description:"Timing for Quicksort");
+if(NUM_ELEMENTS <= 100){
+        println("A:\(A)");
+}
+
 

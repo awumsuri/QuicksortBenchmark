@@ -13,7 +13,7 @@
 #import "QuickSort.h"
 #import "Utils.h"
 
-#define NUM_ELEMENTS 10000000
+#define NUM_ELEMENTS 1000000
 
 void populateArray(int*& a){
     for (int i = 0; i < NUM_ELEMENTS; i++)

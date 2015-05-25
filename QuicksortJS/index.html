@@ -33,7 +33,7 @@
          // console.log("Before:"+a);
          var out            =  $("#array")[0];
          var sortedOut     = $("#sorted-array")[0];
-         if(NUM_SORT <= 10000000)
+         if(NUM_SORT <= 1000000)
              out.innerText  = a;
          else
             out.innerText     = "To many to show";
@@ -41,7 +41,7 @@
          Quicksort(a, 0 , NUM_SORT-1);
          var e       = Date.now();
 
-         if(NUM_SORT <= 10000000)
+         if(NUM_SORT <= 1000000)
              sortedOut.innerText  = a;
          else
              sortedOut.innerText     = "To many to show";
