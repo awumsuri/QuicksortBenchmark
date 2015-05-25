@@ -8,7 +8,7 @@
 
 import Foundation
 
-let NUM_ELEMENTS:UInt32    = 10000000;
+let NUM_ELEMENTS:UInt32    = 1000000;
 var A   = Array<UInt32>();
 
 for (var i:UInt32 = 0; i < NUM_ELEMENTS; i++) {
