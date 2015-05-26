@@ -33,6 +33,6 @@ Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, count:&count, de
 if(NUM_ELEMENTS <= 100){
         println("A:\(A)");
 }
-println("Number of (Quicksort call) Interations:\(count)");
+println("Number of (Quicksort call) Iterations:\(count)");
 
 

@@ -75,7 +75,7 @@ int main(int argc, const char * argv[]) {
         NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
         [quicksort3 Quicksort:data start:0 end:interations-1 count:&count];
         NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
-        NSLog(@"Took %f seconds to sort %d elements. Number of (Quicksort call) Interations: %d", (end - start), NUM_ELEMENTS, count);
+        NSLog(@"Took %f seconds to sort %d elements. Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         
         /*****************
          * Objective -C with C-Array
@@ -84,7 +84,7 @@ int main(int argc, const char * argv[]) {
         start = [NSDate timeIntervalSinceReferenceDate];
         [quicksort3 Quicksort3:&b start:0 end:interations-1 count:&count];
         end = [NSDate timeIntervalSinceReferenceDate];
-        NSLog(@"ObjC C Array Took %f seconds to sort %d elements.  Number of (Quicksort call) Interations: %d", (end - start), NUM_ELEMENTS, count);
+        NSLog(@"ObjC C Array Took %f seconds to sort %d elements.  Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         count   = 0;
         
         /*****************
@@ -96,7 +96,7 @@ int main(int argc, const char * argv[]) {
         Utils::timeFunction(quicksort,a, 0, interations-1, count, "QuickSort Timing");
         if(NUM_ELEMENTS <= 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed Sort Array");
-        std::cout <<  "Quicksort C++ Number of (Quicksort call) Interations:" << count << "\n";
+        std::cout <<  "Quicksort C++ Number of (Quicksort call) Iterations:" << count << "\n";
         delete a;
         delete b;
     }
