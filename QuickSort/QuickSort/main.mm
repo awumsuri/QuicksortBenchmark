@@ -13,8 +13,8 @@
 #import "QuickSort.h"
 #import "Utils.h"
 
-#define NUM_ELEMENTS 1000000
-#define USE_TEST_DATA false
+#define NUM_ELEMENTS 10
+#define USE_TEST_DATA true
 
 void populateArray(int*& a){
     for (int i = 0; i < NUM_ELEMENTS; i++)
@@ -38,18 +38,27 @@ int main(int argc, const char * argv[]) {
                 a[i]    = r;
                 b[i]    = r;
             }
+            
         }else{
             //Utils::writeFile(a, NUM_ELEMENTS, "random.txt");
             Utils::loadFile(a, NUM_ELEMENTS, "random.txt");
+            for (int i = 0 ; i < NUM_ELEMENTS; i++) {
+                b[i]    = a[i];
+                data[i] = [NSNumber numberWithInt:b[i]];
+            }
         }
+        /*****************
+         * Objective-C
+        *****************/
         
-        //Objective-C
         NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
         [quicksort3 Quicksort:data start:0 end:NUM_ELEMENTS-1 count:&count];
         NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];       
         NSLog(@"Took %f seconds to sort %d elements. Number of (Quicksort call) Interations: %d", (end - start), NUM_ELEMENTS, count);
         
-        //Objective C with C arrays
+        /*****************
+         * Objective-C with C arrays
+         *****************/
         count   = 0;
         start = [NSDate timeIntervalSinceReferenceDate];
         [quicksort3 Quicksort3:&b start:0 end:NUM_ELEMENTS-1 count:&count];
@@ -57,13 +66,16 @@ int main(int argc, const char * argv[]) {
         NSLog(@"ObjC C Array Took %f seconds to sort %d elements.  Number of (Quicksort call) Interations: %d", (end - start), NUM_ELEMENTS, count);
         count   = 0;
         
-        //C++
+        /*****************
+         * C++
+         *****************/
         if(NUM_ELEMENTS < 100)
-            Utils::PrintArrayIntegers(b, NUM_ELEMENTS, "b Printed UnSort Array");
+            Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed UnSort Array");
         ArrayFunctionPointer_QuickSort quicksort     = QuickSortCplus;
         Utils::timeFunction(quicksort,a, 0, NUM_ELEMENTS-1, count, "QuickSort Timing");
         if(NUM_ELEMENTS < 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed Sort Array");
+        
         std::cout <<  "Quicksort C++ Number of (Quicksort call) Interations:" << count << "\n";
         delete a;
         delete b;
