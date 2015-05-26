@@ -10,6 +10,9 @@
 		3A087B2B1B11199400DE3588 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A087B2A1B11199400DE3588 /* main.swift */; };
 		3A087B321B1119B100DE3588 /* Quicksort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A087B311B1119B100DE3588 /* Quicksort.swift */; };
 		3A087B371B12B0C100DE3588 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A087B361B12B0C100DE3588 /* Utils.swift */; };
+		3A338CC01B13D165009DE30E /* random.txt in Sources */ = {isa = PBXBuildFile; fileRef = 3A338CBF1B13CCC7009DE30E /* random.txt */; };
+		3A338CC11B13D174009DE30E /* random.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A338CBF1B13CCC7009DE30E /* random.txt */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3A338CC31B14906F009DE30E /* random.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A338CBF1B13CCC7009DE30E /* random.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,8 +22,19 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				3A338CC11B13D174009DE30E /* random.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3A338CC21B149068009DE30E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3A338CC31B14906F009DE30E /* random.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -29,6 +43,7 @@
 		3A087B2A1B11199400DE3588 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3A087B311B1119B100DE3588 /* Quicksort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quicksort.swift; sourceTree = "<group>"; };
 		3A087B361B12B0C100DE3588 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3A338CBF1B13CCC7009DE30E /* random.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = random.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,7 @@
 		3A087B291B11199400DE3588 /* QuicksortSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3A338CBF1B13CCC7009DE30E /* random.txt */,
 				3A087B2A1B11199400DE3588 /* main.swift */,
 				3A087B311B1119B100DE3588 /* Quicksort.swift */,
 				3A087B361B12B0C100DE3588 /* Utils.swift */,
@@ -78,6 +94,7 @@
 				3A087B231B11199400DE3588 /* Sources */,
 				3A087B241B11199400DE3588 /* Frameworks */,
 				3A087B251B11199400DE3588 /* CopyFiles */,
+				3A338CC21B149068009DE30E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -124,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A338CC01B13D165009DE30E /* random.txt in Sources */,
 				3A087B2B1B11199400DE3588 /* main.swift in Sources */,
 				3A087B321B1119B100DE3588 /* Quicksort.swift in Sources */,
 				3A087B371B12B0C100DE3588 /* Utils.swift in Sources */,
@@ -156,7 +174,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -244,6 +262,7 @@
 				3A087B301B11199400DE3588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

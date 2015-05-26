@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3A087B331B112F0000DE3588 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		3A087B341B112F0000DE3588 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		3A338CBE1B13BBCC009DE30E /* random.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = random.txt; sourceTree = "<group>"; };
 		3AFB3C981B10ADB8006F5390 /* QuickSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QuickSort; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFB3C9B1B10ADB8006F5390 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		3AFB3CA21B10AE27006F5390 /* QuickSort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QuickSort.mm; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		3AFB3C9A1B10ADB8006F5390 /* QuickSort */ = {
 			isa = PBXGroup;
 			children = (
+				3A338CBE1B13BBCC009DE30E /* random.txt */,
 				3A087B331B112F0000DE3588 /* Utils.cpp */,
 				3A087B341B112F0000DE3588 /* Utils.h */,
 				3AFB3C9B1B10ADB8006F5390 /* main.mm */,
@@ -217,6 +219,7 @@
 		3AFB3CA01B10ADB8006F5390 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = fast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;

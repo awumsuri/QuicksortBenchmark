@@ -7,6 +7,8 @@
 //
 
 #include "Utils.h"
+#include <math.h>
+#include <sstream>
 
 int Utils::getRandom(int max){
     
@@ -34,11 +36,11 @@ void Utils::timeFunction(ArrayFunctionPointer func, int*& a, std::string descrip
     print((float)t, description);
 }
 
-void Utils::timeFunction(ArrayFunctionPointer_QuickSort func, int*& a, int start, int end,  std::string description){
+void Utils::timeFunction(ArrayFunctionPointer_QuickSort func, int*& a, int start, int end, int& count,  std::string description){
     
     clock_t t;
     t   = clock();
-    (func)(a, start, end);
+    (func)(a, start, end, count);
     t   = clock()   - t;
     print((float)t, description);
 }
@@ -59,4 +61,48 @@ void Utils::print(float time, std::string description){
     std::cout << "* " << description << std::endl;
     std::cout << "* Computation time(s):" << time / CLOCKS_PER_SEC<< "\n";
     std::cout << "********************************\n";
+}
+
+void Utils::writeFile(int* a, int size,  std::string s){
+    std::ofstream fout(s);
+    int i = 0;
+    if(fout.is_open()){
+        
+        std::cout << "File open successfully!" << std::endl;
+        for(i = 0; i < size; i++){
+            fout << a[i];
+            fout << "\n";
+        }
+        fout << '\0';
+        std::cout << "Write successfully";
+        fout.close();
+    }
+    std::cout << "i:" << i << "\n";
+}
+
+void Utils::loadFile(int*& file,int size,  std::string s){
+    std::ifstream fin(s);
+    // array      = new int[size];
+    char* strA      = new char[size];
+    
+    int temp_size   = ceil(log10(size)+1);
+    std::string line;
+    int position    = 0;
+    if(fin.is_open()){
+        
+        std::cout << "File open successfully!" << std::endl;
+        while (std::getline(fin, line)) {
+            //fin.getline(strA[position]);
+            if(line.empty()) continue;
+            std::istringstream iss(line);
+            file[position]      = atoi(line.c_str());
+            position++;
+        }
+        
+    }else
+        std::cout << "Could not open file";
+    file[size]  = '\0';
+    fin.close();
+    std::cout << "\nposition:" << position <<"\n";
+    
 }

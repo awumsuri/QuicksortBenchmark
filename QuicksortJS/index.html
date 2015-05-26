@@ -39,12 +39,13 @@
             out.innerText     = "To many to show";
          var d       = Date.now();
          Quicksort(a, 0 , NUM_SORT-1);
+         debugger;
          var e       = Date.now();
 
-         if(NUM_SORT <= 1000000)
-             sortedOut.innerText  = a;
-         else
-             sortedOut.innerText     = "To many to show";
+//         if(NUM_SORT <= 1000000)
+//             sortedOut.innerText  = a;
+//         else
+//             sortedOut.innerText     = "To many to show";
 
          console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
          $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms");

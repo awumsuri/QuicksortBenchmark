@@ -14,8 +14,6 @@
 -(void) Swap:(NSMutableArray*)A first:(int)first second:(int)second{
     int temp    = [[A objectAtIndex:first] intValue];
     A[first]    = A[second];
-    //[A insertObject:[A objectAtIndex:second] atIndex:first];
-    //[A insertObject:[NSNumber numberWithInt:temp] atIndex:second];
     [A replaceObjectAtIndex:second withObject:[NSNumber numberWithInt: temp]];   
 }
 
@@ -34,22 +32,19 @@
     return (i + 1);
 }
 
--(void)  Quicksort:(NSMutableArray*)A start:(int)start end:(int)end{
+-(void)  Quicksort:(NSMutableArray*)A start:(int)start end:(int)end count:(int *)count{
     if(start < end){
+        *count  += 1;
         int p       = [self Partition:A partition:start length:end];
-        [self Quicksort:A start:start end:(p-1)];
-        [self Quicksort:A start:p+1 end:end];
+        [self Quicksort:A start:start end:(p-1) count:count];
+        [self Quicksort:A start:p+1 end:end count:count];
     }
 }
 
-
 -(void) Swap3:(int*)A first:(int)first second:(int)second{
-    int temp        =A[first];
-    A[first]       = A[second];
-    //[A insertObject:[A objectAtIndex:second] atIndex:first];
-    //[A insertObject:[NSNumber numberWithInt:temp] atIndex:second];
-    //[A replaceObjectAtIndex:second withObject:[NSNumber numberWithInt: temp]];
-    A[second]      = temp;
+    int temp        = A[first];
+    A[first]        = A[second];
+    A[second]       = temp;
 }
 
 -(int) Partition3:(int*)A partition:(int)partition length:(int)length{
@@ -67,11 +62,13 @@
     return (i + 1);
 }
 
--(void)  Quicksort3:(int**)A start:(int)start end:(int)end{
+-(void)  Quicksort3:(int**)A start:(int)start end:(int)end count:(int*)count{
     if(start < end){
+        *count  += 1;
         int p       = [self Partition3:*A partition:start length:end];
-        [self Quicksort3:A start:start end:(p-1)];
-        [self Quicksort3:A start:p+1 end:end];
+        [self Quicksort3:A start:start end:(p-1) count:count];
+        [self Quicksort3:A start:p+1 end:end count:count];
+        
     }
 }
 
@@ -97,11 +94,12 @@ int Partition(int *& A, int p, int l){
     return (i + 1);
 }
 
-void QuickSortCplus(int *& A, int start, int length){
+void QuickSortCplus(int *& A, int start, int length, int& count){
     if(start < length){
+        count += 1;
         int p         = Partition(A, start, length);
-        QuickSortCplus(A, start, p-1);
-        QuickSortCplus(A, p+1, length);
+        QuickSortCplus(A, start, p-1, count);
+        QuickSortCplus(A, p+1, length, count);
     }
     
 }

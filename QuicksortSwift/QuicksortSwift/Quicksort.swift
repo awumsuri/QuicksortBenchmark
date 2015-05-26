@@ -10,13 +10,13 @@ import Foundation
 
 class Quicksort {
     
-    func Swap(inout A:[UInt32], first: Int, second: Int){
+    func Swap(inout A:[Int], first: Int, second: Int){
         let temp        = A[first];
         A[first]       = A[second];
         A[second]        = temp;
     }
     
-    func partition(inout A:[UInt32], start: Int, end: Int) -> Int{
+    func partition(inout A:[Int], start: Int, end: Int) -> Int{
         let pivot       = A[end];
         var index       = start-1;
         
@@ -33,12 +33,13 @@ class Quicksort {
     
 
     
-    func quicksort(inout v: [UInt32], start: Int, end: Int) {
+    func quicksort(inout v: [Int], start: Int, end: Int, inout count: Int) {
         if start < end {
+            count += 1;
             let pivotIndex = partition(&v, start:start, end:end)
             //let pivotIndex = partition(&v, left:start, right:end)
-            quicksort(&v, start: start, end: pivotIndex - 1)
-            quicksort(&v, start: pivotIndex + 1, end: end)
+            quicksort(&v, start: start, end: pivotIndex - 1, count: &count)
+            quicksort(&v, start: pivotIndex + 1, end: end, count: &count)
         }
     }
 }

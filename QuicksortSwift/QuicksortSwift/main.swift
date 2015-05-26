@@ -8,18 +8,31 @@
 
 import Foundation
 
-let NUM_ELEMENTS:UInt32    = 1000000;
-var A   = Array<UInt32>();
+let NUM_ELEMENTS:Int    = 1000000;
+let USE_TEST_DATA       = false;
+var A   = Array<Int>();
 
-for (var i:UInt32 = 0; i < NUM_ELEMENTS; i++) {
-    let r   =  arc4random_uniform(NUM_ELEMENTS) + 1;
-    A.append(r);
+
+if(USE_TEST_DATA){
+    
+    let path = NSBundle.mainBundle().pathForResource("random", ofType: "txt")
+    Utils.loadFile(&A, path: path!);
+    
+}
+else{
+    for (var i:Int = 0; i < NUM_ELEMENTS; i++) {
+        let r   =  arc4random_uniform(NUM_ELEMENTS) + 1;
+        A.append(r);
+    }
 }
 
 let q:Quicksort         = Quicksort();
-Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, description:"Timing for Quicksort");
+var count               = 0;
+
+Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, count:&count, description:"Timing for Quicksort");
 if(NUM_ELEMENTS <= 100){
         println("A:\(A)");
 }
+println("Number of (Quicksort call) Interations:\(count)");
 
 

@@ -13,11 +13,12 @@
 #include <random>
 #include <ctime>
 #include <iostream>
+#include <fstream>
 
 
 typedef void (*VoidFunctionPointer)();
 typedef float (*FloatFunction)(int, char*);
-typedef void (*ArrayFunctionPointer_QuickSort)(int*&, int, int);
+typedef void (*ArrayFunctionPointer_QuickSort)(int*&, int, int, int&);
 typedef void (*ArrayFunctionPointer)(int*&);
 
 
@@ -26,8 +27,10 @@ public:
     static int getRandom(int);
     static void timeFunction(VoidFunctionPointer, std::string);
     static void timeFunction(ArrayFunctionPointer, int*&, std::string);
-    static void timeFunction(ArrayFunctionPointer_QuickSort, int*&, int , int,std::string);
+    static void timeFunction(ArrayFunctionPointer_QuickSort, int*&, int , int, int&, std::string);
     static void PrintArrayIntegers(int*&, int, std::string);
+    static void writeFile(int*, int size, std::string);
+    static void loadFile(int*&,int, std::string);
 private:
     static void print(float, std::string);
 };
