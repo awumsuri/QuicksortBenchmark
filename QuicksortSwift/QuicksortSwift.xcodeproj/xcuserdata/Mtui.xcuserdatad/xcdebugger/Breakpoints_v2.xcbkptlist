@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuicksortSwift/main.swift"
-            timestampString = "454334360.49697"
+            timestampString = "454336741.647953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23">
+            startingLineNumber = "29"
+            endingLineNumber = "29">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

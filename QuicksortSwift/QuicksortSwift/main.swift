@@ -9,7 +9,7 @@
 import Foundation
 
 let NUM_ELEMENTS:Int    = 1000000;
-let USE_TEST_DATA       = false;
+let USE_TEST_DATA       = true;
 var A   = Array<Int>();
 
 
@@ -21,8 +21,8 @@ if(USE_TEST_DATA){
 }
 else{
     for (var i:Int = 0; i < NUM_ELEMENTS; i++) {
-        let r   =  arc4random_uniform(NUM_ELEMENTS) + 1;
-        A.append(r);
+        let r   =  arc4random_uniform(UInt32(NUM_ELEMENTS)) + 1;
+        A.append(Int(r));
     }
 }
 
