@@ -22,45 +22,79 @@
     <script>
 	// var NUM_SORT        = 10;
 	 //var e,d;
-      this.data;
-     function sort(){
+    var useRandomCheckBox  = $("#useRandom")[0];
+    var dataHasBeenParsed;
+    var a   = [];
+    var count  = {
+        count : 0
+    };
+
+    function checkBoxHandler(e){
         //debugger;
-         NUM_SORT   = parseInt($("#sortCount")[0].value);
-         var a   = [];
-         for(var i = 0; i < NUM_SORT; i++){
-             a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
+        if(e.target.checked){
+           $("#sortCount")[0].value    = "Using TEST DATA";
+
+        }  else{
+            $("#sortCount")[0].value    = "1000";
+
+        }
+    }
+
+     function sort(){
+         var NUM_SORT   = 0;
+        debugger;
+
+         if (useRandomCheckBox.checked ){
+                 a  =[];
+                 a  = window.data;
+                NUM_SORT    = a.length;
+         }else{
+             NUM_SORT   = parseInt($("#sortCount")[0].value);
+             a  = [];
+             for(var i = 0; i < NUM_SORT; i++){
+                 a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
+             }
          }
+
          // a =  [3,45,23,24,54,2,7,3,2,1];
          // console.log("Before:"+a);
          var out            =  $("#array")[0];
-         var sortedOut     = $("#sorted-array")[0];
-         if(NUM_SORT <= 1000000)
+         var sortedOut      = $("#sorted-array")[0];
+         count.count   = 0;
+
+         if(NUM_SORT <= 1000001)
              out.innerText  = a;
          else
             out.innerText     = "To many to show";
          var d       = Date.now();
-         Quicksort(a, 0 , NUM_SORT-1);
+         Quicksort(a, 0 , NUM_SORT-1, count);
          //debugger;
          var e       = Date.now();
 
-         if(NUM_SORT <= 1000000)
+         if(NUM_SORT <= 1000001)
              sortedOut.innerText  = a;
          else
              sortedOut.innerText     = "To many to show";
 
          console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
-         $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms");
+         $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms. Number of Interations: "+count.count);
      }
 	 
         $(document).ready(function(){
+            this.data;
+            this.dataHasBeenParsed  = false;
+
+            useRandomCheckBox  = $("#useRandom")[0];
+
             $("#sortButton").on("click",sort);
+            $("#useRandom").on("click", checkBoxHandler);
 
             $.ajax({
                 url : "../random.txt",
                 dataType: "text",
                 success : function (data) {
                     //debugger;
-                    window.data   = data;
+                    window.data   = data.split("\n");
                 }
             });
         });
@@ -71,13 +105,13 @@
         <input id="sortCount" type="text" value="1000">
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="" id="useRandom">
-                <label>Use Random Test File </label>
+                <input type="checkbox" value="isRandom" id="useRandom">
+                <label>Use Test File </label>
             </label>
         </div>
 
         <div id="output">
-            <p>Testing</p>
+            <p></p>
             <p>Unsorted</p>
             <textarea id="array"></textarea>
             <p>Sorted</p>

@@ -1,12 +1,13 @@
 /**
  * Created by Mtui on 5/24/15.
  */
-function Quicksort(A, start, end){
+function Quicksort(A, start, end, count){
     if(start < end){
-       // debugger;
+        debugger;
+        count.count += 1;
         var partition   = Partition(A, start, end);
-        Quicksort(A, start, partition-1);
-        Quicksort(A, partition+1, end);
+        Quicksort(A, start, partition-1, count);
+        Quicksort(A, partition+1, end, count);
     }
 }
 
