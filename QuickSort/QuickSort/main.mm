@@ -23,7 +23,7 @@
 #import "QuickSort.h"
 #import "Utils.h"
 
-#define NUM_ELEMENTS 10
+#define NUM_ELEMENTS 100
 #define RANDOM_TEST_DATA_SIZE 1000000
 #define USE_TEST_DATA true
 
