@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<style>
-	p{
+	p, label{
 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 12px;
 	}
     textarea{
         width: 100%;
@@ -21,7 +22,7 @@
     <script>
 	// var NUM_SORT        = 10;
 	 //var e,d;
-
+      this.data;
      function sort(){
         //debugger;
          NUM_SORT   = parseInt($("#sortCount")[0].value);
@@ -39,13 +40,13 @@
             out.innerText     = "To many to show";
          var d       = Date.now();
          Quicksort(a, 0 , NUM_SORT-1);
-         debugger;
+         //debugger;
          var e       = Date.now();
 
-//         if(NUM_SORT <= 1000000)
-//             sortedOut.innerText  = a;
-//         else
-//             sortedOut.innerText     = "To many to show";
+         if(NUM_SORT <= 1000000)
+             sortedOut.innerText  = a;
+         else
+             sortedOut.innerText     = "To many to show";
 
          console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
          $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms");
@@ -53,12 +54,27 @@
 	 
         $(document).ready(function(){
             $("#sortButton").on("click",sort);
+
+            $.ajax({
+                url : "../random.txt",
+                dataType: "text",
+                success : function (data) {
+                    //debugger;
+                    window.data   = data;
+                }
+            });
         });
 
     </script>
     <div id="input">
         <button id="sortButton">Sort</button>
         <input id="sortCount" type="text" value="1000">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="" id="useRandom">
+                <label>Use Random Test File </label>
+            </label>
+        </div>
 
         <div id="output">
             <p>Testing</p>
@@ -66,6 +82,7 @@
             <textarea id="array"></textarea>
             <p>Sorted</p>
             <textarea id="sorted-array"></textarea>
+
         </div>
     </div>
 </body>
