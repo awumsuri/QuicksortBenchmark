@@ -15,9 +15,13 @@ for(var i = 0; i < NUM_SORT; i++){
 // a =  [3,45,23,24,54,2,7,3,2,1];
 // console.log("Before:"+a);
 console.log(typeof qs.Quicksort);
-var d       = Date.now();
+//var d       = Date.now()
+// ;
+var s   = "Qucksort-"+NUM_SORT;
+console.time(s);
 qs.Quicksort(a, 0 , NUM_SORT-1, count);
-var e       = Date.now();
+console.timeEnd(s);
+//var e       = Date.now();
 
-console.log("QuickSort:"+ (e-d)+ " Number of Iterations:" + count.count);//
+console.log(" Number of Iterations:" + count.count);//
 //console.log("\nA:"+ a.toString());

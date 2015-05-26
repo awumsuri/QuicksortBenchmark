@@ -67,8 +67,11 @@
          else
             out.innerText     = "To many to show";
          var d       = Date.now();
+         var sTime      = "Quicksort-"+NUM_SORT;
+         //console.time(sTime);
          Quicksort(a, 0 , NUM_SORT-1, count);
-         //debugger;
+         //var s  = console.timeEnd(sTime);
+
          var e       = Date.now();
 
          if(NUM_SORT <= 1000001)
@@ -76,16 +79,14 @@
          else
              sortedOut.innerText     = "To many to show";
 
-         console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
+         console.log(s+ "QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
          $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms. Number of Interations: "+count.count);
      }
 	 
         $(document).ready(function(){
             this.data;
             this.dataHasBeenParsed  = false;
-
             useRandomCheckBox  = $("#useRandom")[0];
-
             $("#sortButton").on("click",sort);
             $("#useRandom").on("click", checkBoxHandler);
 
