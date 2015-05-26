@@ -3,7 +3,7 @@
  */
 function Quicksort(A, start, end, count){
     if(start < end){
-        debugger;
+        //debugger;
         count.count += 1;
         var partition   = Partition(A, start, end);
         Quicksort(A, start, partition-1, count);
