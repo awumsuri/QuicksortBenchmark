@@ -25,6 +25,7 @@
     var useRandomCheckBox;
     var dataHasBeenParsed;
     var useWhileQuicksortBox;
+    var out;
     var a   = [];
     var count  = {
         count : 0
@@ -34,9 +35,11 @@
         //debugger;
         if(e.target.checked){
            $("#sortCount")[0].value    = "Using TEST DATA";
+            out.innerText   = window.data;
 
         }  else{
             $("#sortCount")[0].value    = "1000";
+            out.innerText   = "";
 
         }
     }
@@ -49,8 +52,9 @@
 
          if (useRandomCheckBox.checked ){
                  a  =[];
-                 a  = window.data;
-                NUM_SORT    = a.length-1;
+               for(var i = 0; i  < window.data.length; i++)
+                   a[i] = (window.data[i]);
+                NUM_SORT    = a.length;
          }else{
              NUM_SORT   = parseInt($("#sortCount")[0].value);
              a  = [];
@@ -61,7 +65,7 @@
 
          // a =  [3,45,23,24,54,2,7,3,2,1];
          // console.log("Before:"+a);
-         var out            =  $("#array")[0];
+
          var sortedOut      = $("#sorted-array")[0];
          count.count   = 0;
 
@@ -104,8 +108,10 @@
                 url : "../random2.txt",
                 dataType: "text",
                 success : function (data) {
-                    //debugger;
+
+                    out          =  $("#array")[0];
                     window.data   = data.split("\n");
+                    window.data.pop();
                 }
             });
         });
