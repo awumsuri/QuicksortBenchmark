@@ -23,8 +23,8 @@
 #import "QuickSort.h"
 #import "Utils.h"
 
-#define NUM_ELEMENTS 1000000
-#define RANDOM_TEST_DATA_SIZE 1000000
+#define NUM_ELEMENTS 100
+#define RANDOM_TEST_DATA_SIZE 100
 #define USE_TEST_DATA true
 
 void populateArray(int*& a){
@@ -41,12 +41,12 @@ int main(int argc, const char * argv[]) {
         int* a;
         int* b;
         int count   = 0;
-        int interations;
+        int iterations;
         
         if(!USE_TEST_DATA){
             a      = new int [NUM_ELEMENTS];
             b      = new int [NUM_ELEMENTS];
-            interations     = NUM_ELEMENTS;
+            iterations     = NUM_ELEMENTS;
             
             for (int i = 0; i < NUM_ELEMENTS; i++) {
                 int r = arc4random() % NUM_ELEMENTS;
@@ -55,14 +55,15 @@ int main(int argc, const char * argv[]) {
                 b[i]    = r;
                 
             }
+            Utils::writeFile(a, NUM_ELEMENTS, "random2.txt");
             
         }else{
-            //Utils::writeFile(a, NUM_ELEMENTS, "random.txt");
+            
             a      = new int [RANDOM_TEST_DATA_SIZE];
             b      = new int [RANDOM_TEST_DATA_SIZE];
-            interations     = RANDOM_TEST_DATA_SIZE;
+            iterations     = RANDOM_TEST_DATA_SIZE;
             
-            Utils::loadFile(a, RANDOM_TEST_DATA_SIZE, "random.txt");
+            Utils::loadFile(a, RANDOM_TEST_DATA_SIZE, "random2.txt");
             for (int i = 0 ; i < RANDOM_TEST_DATA_SIZE; i++) {
                 b[i]    = a[i];
                 data[i] = [NSNumber numberWithInt:b[i]];
@@ -73,7 +74,7 @@ int main(int argc, const char * argv[]) {
          *****************/
         
         NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
-        [quicksort3 Quicksort:data start:0 end:interations-1 count:&count];
+        [quicksort3 Quicksort:data start:0 end:iterations-1 count:&count];
         NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
         NSLog(@"Took %f seconds to sort %d elements. Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         
@@ -82,9 +83,11 @@ int main(int argc, const char * argv[]) {
          *****************/
         count   = 0;
         start = [NSDate timeIntervalSinceReferenceDate];
-        [quicksort3 Quicksort3:&b start:0 end:interations-1 count:&count];
+        [quicksort3 Quicksort3:&b start:0 end:iterations-1 count:&count];
         end = [NSDate timeIntervalSinceReferenceDate];
         NSLog(@"ObjC C Array Took %f seconds to sort %d elements.  Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
+        if(NUM_ELEMENTS <= 100)
+            Utils::PrintArrayIntegers(b, NUM_ELEMENTS, "Printed Sort Array");
         count   = 0;
         
         /*****************
@@ -93,9 +96,11 @@ int main(int argc, const char * argv[]) {
         if(NUM_ELEMENTS <= 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed UnSort Array");
         ArrayFunctionPointer_QuickSort quicksort     = QuickSortCplus;
-        Utils::timeFunction(quicksort,a, 0, interations-1, count, "QuickSort Timing");
+        Utils::timeFunction(quicksort,a, 0, iterations-1, count, "QuickSort Timing");
         if(NUM_ELEMENTS <= 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed Sort Array");
+       // else
+         Utils::writeFile(a, iterations, "random_sorted.txt");
         std::cout <<  "Quicksort C++ Number of (Quicksort call) Iterations:" << count << "\n";
         delete a;
         delete b;

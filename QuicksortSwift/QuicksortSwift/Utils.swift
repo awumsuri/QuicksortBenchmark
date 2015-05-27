@@ -30,6 +30,15 @@ class Utils {
         printTime(description, time: (endT!-startT!))
     }
     
+    static func timeFunction(f:(inout [Int], inout Int)->(), inout A:[Int], inout count:Int, description: String){
+        let startT:NSTimeInterval?
+        let endT:NSTimeInterval?
+        startT                   = NSDate.timeIntervalSinceReferenceDate();
+        f(&A, &count);
+        endT                     = NSDate.timeIntervalSinceReferenceDate();
+        printTime(description, time: (endT!-startT!))
+    }
+    
     static func printTime(description: String, time: Double)->(){
         println("********************************")
         println("*")

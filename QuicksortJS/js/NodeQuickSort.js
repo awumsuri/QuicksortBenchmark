@@ -2,21 +2,19 @@
  * Created by Mtui on 5/24/15.
  */
 
-var qs   = require("./QuickSort");
+var qs      = require("./QuickSort");
+var random    = require("./power/sortinghelper");
+
 
 var NUM_SORT        = 1000000;
 var a   = [];
 var count={
     count:0
 }
-for(var i = 0; i < NUM_SORT; i++){
-    a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
-}
-// a =  [3,45,23,24,54,2,7,3,2,1];
-// console.log("Before:"+a);
-console.log(typeof qs.Quicksort);
-//var d       = Date.now()
-// ;
+a = random.randomArray(NUM_SORT);
+//for(var i = 0; i < NUM_SORT; i++){
+//    a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
+//}
 var s   = "Qucksort-"+NUM_SORT;
 console.time(s);
 qs.Quicksort(a, 0 , NUM_SORT-1, count);

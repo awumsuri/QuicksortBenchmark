@@ -22,8 +22,9 @@
     <script>
 	// var NUM_SORT        = 10;
 	 //var e,d;
-    var useRandomCheckBox  = $("#useRandom")[0];
+    var useRandomCheckBox;
     var dataHasBeenParsed;
+    var useWhileQuicksortBox;
     var a   = [];
     var count  = {
         count : 0
@@ -42,12 +43,14 @@
 
      function sort(){
          var NUM_SORT   = 0;
+         var quicksortPointer;
         //debugger;
+
 
          if (useRandomCheckBox.checked ){
                  a  =[];
                  a  = window.data;
-                NUM_SORT    = 1000000;//a.length;
+                NUM_SORT    = a.length-1;
          }else{
              NUM_SORT   = parseInt($("#sortCount")[0].value);
              a  = [];
@@ -70,7 +73,10 @@
 
          console.time(sTime);
          var d       = Date.now();
-         Quicksort(a, 0 , NUM_SORT-1, count);
+         if(!useWhileQuicksortBox.checked)
+            Quicksort(a, 0 , NUM_SORT-1, count);
+         else
+            quicksort_while(a);
          var e       = Date.now();
          var s  = console.timeEnd(sTime);
 
@@ -82,17 +88,20 @@
 
          console.log("QuickSort:"+ (e-d));// + "\nA:"+ a.toString());
          $("#output p")[0].innerText = ("Quicksort-Sorting "+NUM_SORT+" elements took "+(e-d)+" ms. Number of Interations: "+count.count);
+
+         delete a;
      }
 	 
         $(document).ready(function(){
             this.data;
             this.dataHasBeenParsed  = false;
             useRandomCheckBox  = $("#useRandom")[0];
+            useWhileQuicksortBox  = $("#useWhileQuicksort")[0];
             $("#sortButton").on("click",sort);
             $("#useRandom").on("click", checkBoxHandler);
 
             $.ajax({
-                url : "../random.txt",
+                url : "../random2.txt",
                 dataType: "text",
                 success : function (data) {
                     //debugger;
@@ -109,6 +118,10 @@
             <label>
                 <input type="checkbox" value="isRandom" id="useRandom">
                 <label>Use Test File </label>
+            </label>
+            <label>
+                <input type="checkbox" value="whichQuicksort" id="useWhileQuicksort">
+                <label>Use while Quicksort </label>
             </label>
         </div>
 
