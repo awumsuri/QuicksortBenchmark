@@ -19,13 +19,14 @@
 #import <Foundation/Foundation.h>
 
 #include <stdlib.h>
+#include <iostream>
 
 #import "QuickSort.h"
 #import "Utils.h"
 
-#define NUM_ELEMENTS 100
-#define RANDOM_TEST_DATA_SIZE 100
-#define USE_TEST_DATA true
+#define NUM_ELEMENTS 1000000
+#define RANDOM_TEST_DATA_SIZE 1000000
+#define USE_TEST_DATA false
 
 void populateArray(int*& a){
     for (int i = 0; i < NUM_ELEMENTS; i++)
@@ -63,7 +64,7 @@ int main(int argc, const char * argv[]) {
             b      = new int [RANDOM_TEST_DATA_SIZE];
             iterations     = RANDOM_TEST_DATA_SIZE;
             
-            Utils::loadFile(a, RANDOM_TEST_DATA_SIZE, "random2.txt");
+            Utils::loadFile(a, RANDOM_TEST_DATA_SIZE, "random.txt");
             for (int i = 0 ; i < RANDOM_TEST_DATA_SIZE; i++) {
                 b[i]    = a[i];
                 data[i] = [NSNumber numberWithInt:b[i]];
@@ -76,7 +77,7 @@ int main(int argc, const char * argv[]) {
         NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
         [quicksort3 Quicksort:data start:0 end:iterations-1 count:&count];
         NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
-        NSLog(@"Took %f seconds to sort %d elements. Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
+        NSLog(@"Obj-C Took %f seconds to sort %d elements. Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         
         /*****************
          * Objective -C with C-Array

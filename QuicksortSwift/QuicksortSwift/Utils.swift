@@ -11,10 +11,10 @@ import Foundation
 class Utils {
     
     static func loadFile(inout A:[Int], path: String){
-        if let content = String(contentsOfFile:path, encoding: NSUTF8StringEncoding, error: nil) {
-            var aa = content.componentsSeparatedByString("\n")
+        if let content = try? String(contentsOfFile:path, encoding: NSUTF8StringEncoding) {
+            let aa = content.componentsSeparatedByString("\n")
             for number in aa{
-                    if let n = number.toInt(){
+                    if let n = Int(number){
                         A.append(n)
                     }
                 }
@@ -40,10 +40,10 @@ class Utils {
     }
     
     static func printTime(description: String, time: Double)->(){
-        println("********************************")
-        println("*")
-        println("*\(description)")
-        println("*Computation Time(s): \((time))");
-        println("********************************")
+        print("********************************")
+        print("*")
+        print("*\(description)")
+        print("*Computation Time(s): \((time))");
+        print("********************************")
     }
 }

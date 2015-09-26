@@ -111,6 +111,8 @@
 		3A087B1F1B11199400DE3588 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Suri;
 				TargetAttributes = {

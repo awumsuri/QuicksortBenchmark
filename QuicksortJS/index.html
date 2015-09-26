@@ -14,9 +14,7 @@
         height: 50%;
         overflow-y: scroll;
     }
-
-
-	</style>
+    </style>
 </head>
 <body>
     <script>
@@ -47,13 +45,14 @@
      function sort(){
          var NUM_SORT   = 0;
          var quicksortPointer;
-        //debugger;
-
-
+         //debugger;
          if (useRandomCheckBox.checked ){
                  a  =[];
-               for(var i = 0; i  < window.data.length; i++)
-                   a[i] = (window.data[i]);
+               for(var i = 0; i  < window.data.length; i++){
+                   a[i]  = window.data[i];
+
+               }
+                //debugger;
                 NUM_SORT    = a.length;
          }else{
              NUM_SORT   = parseInt($("#sortCount")[0].value);
@@ -62,10 +61,6 @@
                  a[i]    = Math.floor(Math.random() * NUM_SORT)+1;
              }
          }
-
-         // a =  [3,45,23,24,54,2,7,3,2,1];
-         // console.log("Before:"+a);
-
          var sortedOut      = $("#sorted-array")[0];
          count.count   = 0;
 
@@ -73,8 +68,8 @@
              out.innerText  = a;
          else
             out.innerText     = "To many to show";
-         var sTime      = "Quicksort-"+NUM_SORT;
 
+         var sTime      = "Quicksort-"+NUM_SORT;
          console.time(sTime);
          var d       = Date.now();
          if(!useWhileQuicksortBox.checked)
@@ -101,6 +96,7 @@
             this.dataHasBeenParsed  = false;
             useRandomCheckBox  = $("#useRandom")[0];
             useWhileQuicksortBox  = $("#useWhileQuicksort")[0];
+
             $("#sortButton").on("click",sort);
             $("#useRandom").on("click", checkBoxHandler);
 
@@ -108,7 +104,6 @@
                 url : "../random2.txt",
                 dataType: "text",
                 success : function (data) {
-
                     out          =  $("#array")[0];
                     window.data   = data.split("\n");
                     window.data.pop();
