@@ -1,8 +1,0 @@
-[
- {
-  "file": "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/Utils.swift",
-  "offset": 245,
-  "remove": 1453,
-  "text": "try? String(contentsOfFile:path, encoding: NSUTF8StringEncoding) {\n            let aa = content.componentsSeparatedByString(\"\\n\")\n            for number in aa{\n                    if let n = Int(number){\n                        A.append(n)\n                    }\n                }\n            }\n    }\n    \n    static func timeFunction(f:(inout [Int], Int, Int, inout Int)->(), inout A:[Int], start: Int, end: Int, inout count:Int, description: String){\n        let startT:NSTimeInterval?\n        let endT:NSTimeInterval?\n        startT                   = NSDate.timeIntervalSinceReferenceDate();\n        f(&A,start, end, &count);\n        endT                     = NSDate.timeIntervalSinceReferenceDate();        \n        printTime(description, time: (endT!-startT!))\n    }\n    \n    static func timeFunction(f:(inout [Int], inout Int)->(), inout A:[Int], inout count:Int, description: String){\n        let startT:NSTimeInterval?\n        let endT:NSTimeInterval?\n        startT                   = NSDate.timeIntervalSinceReferenceDate();\n        f(&A, &count);\n        endT                     = NSDate.timeIntervalSinceReferenceDate();\n        printTime(description, time: (endT!-startT!))\n    }\n    \n    static func printTime(description: String, time: Double)->(){\n        print(\"********************************\")\n        print(\"*\")\n        print(\"*\\(description)\")\n        print(\"*Computation Time(s): \\((time))\");\n        print",
- }
-]

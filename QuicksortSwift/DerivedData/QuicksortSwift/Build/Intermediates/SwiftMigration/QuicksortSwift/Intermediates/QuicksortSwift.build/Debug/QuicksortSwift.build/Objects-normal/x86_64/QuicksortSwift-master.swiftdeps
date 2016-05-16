@@ -1,7 +1,0 @@
-version: "Apple Swift version 2.0 (swiftlang-700.0.59 clang-700.0.72)"
-options: "32697bcbe6dbb70624135a3e97501f00"
-build_time: [496603373, 379189000]
-inputs: 
-	"/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift": [486341060, 0]
-	"/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/Utils.swift": [485998047, 0]
-	"/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/Quicksort.swift": [486005129, 0]
