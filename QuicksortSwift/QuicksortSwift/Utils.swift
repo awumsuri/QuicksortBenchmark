@@ -33,9 +33,9 @@ class Utils {
     static func timeFunction(f:(inout [Int], inout Int)->(), inout A:[Int], inout count:Int, description: String){
         let startT:NSTimeInterval?
         let endT:NSTimeInterval?
-        startT                   = NSDate.timeIntervalSinceReferenceDate();
+        startT = NSDate.timeIntervalSinceReferenceDate();
         f(&A, &count);
-        endT                     = NSDate.timeIntervalSinceReferenceDate();
+        endT  = NSDate.timeIntervalSinceReferenceDate();
         printTime(description, time: (endT!-startT!))
     }
     

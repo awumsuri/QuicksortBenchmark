@@ -17,16 +17,15 @@ if(USE_TEST_DATA){
     let path = NSBundle.mainBundle().pathForResource("random", ofType: "txt")
     Utils.loadFile(&A, path: path!);
 }
-else{
-    
-    for (var i:Int = 0; i < NUM_ELEMENTS; i++) {
+else{    
+    for index in 0..<NUM_ELEMENTS {
         let r   =  arc4random_uniform(UInt32(NUM_ELEMENTS)) + 1;
         A.append(Int(r));
     }
 }
 
-let q:Quicksort         = Quicksort();
-var count               = 0;
+let q:Quicksort = Quicksort();
+var count = 0;
 print("***********************************\n*number of element:\(A.count)");
 
 Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, count:&count, description:"Timing for Quicksort");

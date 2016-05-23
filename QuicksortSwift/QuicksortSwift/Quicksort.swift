@@ -20,11 +20,12 @@ class Quicksort {
         let pivot       = A[end];
         var index       = start-1;
         
-        for(var i = start; i < end; i++){
+        for i in start..<end {
             if(A[i] <= pivot){
-                index++;
+                index += 1;
                 Swap(&A, first: index, second: i)
             }
+           // print("index:\(index) A:\(A[end]) pivot:\(pivot)");
         }
         Swap(&A, first: index+1, second: end);
         
@@ -33,10 +34,10 @@ class Quicksort {
     func quicksort(inout v: [Int], start: Int, end: Int, inout count: Int) {
         if start < end {
             count += 1;
-            let pivotIndex = partition(&v, start:start, end:end)
+            let pivotIndex = partition(&v, start:start, end:end);
             //let pivotIndex = partition(&v, left:start, right:end)
-            quicksort(&v, start: start, end: pivotIndex - 1, count: &count)
-            quicksort(&v, start: pivotIndex + 1, end: end, count: &count)
+            quicksort(&v, start: start, end: (pivotIndex - 1), count: &count);
+            quicksort(&v, start: (pivotIndex + 1), end: end, count: &count);
         }
     }
     
