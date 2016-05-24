@@ -8,10 +8,9 @@
 
 import Foundation
 
-let NUM_ELEMENTS:Int    = 1000;
+let NUM_ELEMENTS:Int    = 10000000;
 let USE_TEST_DATA       = true;
 var A   = Array<Int>();
-
 
 if(USE_TEST_DATA){
     let path = NSBundle.mainBundle().pathForResource("random", ofType: "txt")
