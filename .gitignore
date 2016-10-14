@@ -2,3 +2,4 @@
 *.pbxproj
 *.xcworkspace
 DerivedData/
+node_modules/
