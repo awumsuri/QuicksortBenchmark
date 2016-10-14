@@ -67,8 +67,7 @@
         *count  += 1;
         int p       = [self Partition3:*A partition:start length:end];
         [self Quicksort3:A start:start end:(p-1) count:count];
-        [self Quicksort3:A start:p+1 end:end count:count];
-        
+        [self Quicksort3:A start:p+1 end:end count:count];        
     }
 }
 

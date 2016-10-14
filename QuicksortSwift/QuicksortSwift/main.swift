@@ -13,8 +13,8 @@ let USE_TEST_DATA       = true;
 var A   = Array<Int>();
 
 if(USE_TEST_DATA){
-    let path = NSBundle.mainBundle().pathForResource("random", ofType: "txt")
-    Utils.loadFile(&A, path: path!);
+    let path = Bundle.main.path(forResource: "random", ofType: "txt")
+    Utils.loadFile(A: &A, path: path!);
 }
 else{    
     for index in 0..<NUM_ELEMENTS {
@@ -27,7 +27,7 @@ let q:Quicksort = Quicksort();
 var count = 0;
 print("***********************************\n*number of element:\(A.count)");
 
-Utils.timeFunction(q.quicksort, A: &A, start: 0, end:A.count-1, count:&count, description:"Timing for Quicksort");
+Utils.timeFunction(f: q.quicksort, A: &A, start: 0, end:A.count-1, count:&count, description:"Timing for Quicksort");
 //Utils.timeFunction(q.quicksort_while, A:&A, count:&count, description:"Timing for quicksort while");
 
 if(NUM_ELEMENTS <= 100){

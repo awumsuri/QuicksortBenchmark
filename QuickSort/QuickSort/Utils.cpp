@@ -10,8 +10,7 @@
 #include <math.h>
 #include <sstream>
 
-int Utils::getRandom(int max){
-    
+int Utils::getRandom(int max){    
     static std::mt19937 rng;
     rng.seed(std::random_device()());
     static std::uniform_int_distribution<std::mt19937::result_type> dist6(1,max);
@@ -81,15 +80,10 @@ void Utils::writeFile(int* a, int size,  std::string s){
 }
 
 void Utils::loadFile(int*& file,int size,  std::string s){
-    std::ifstream fin(s);
-    // array      = new int[size];
-    char* strA      = new char[size];
-    
-    int temp_size   = ceil(log10(size)+1);
+    std::ifstream fin(s);   
     std::string line;
     int position    = 0;
     if(fin.is_open()){
-        
         std::cout << "File open successfully!" << std::endl;
         while (std::getline(fin, line)) {
             //fin.getline(strA[position]);
@@ -99,8 +93,9 @@ void Utils::loadFile(int*& file,int size,  std::string s){
             position++;
         }
         
-    }else
+    }else {
         std::cout << "Could not open file";
+    }
     file[size]  = '\0';
     fin.close();
     std::cout << "\nposition:" << position <<"\n";

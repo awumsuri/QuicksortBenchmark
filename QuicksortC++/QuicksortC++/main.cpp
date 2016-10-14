@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Suri. All rights reserved.
 //
 #include <stdlib.h>
-#include <iostream>
+//#include <iostream>
 
-#import "QuickSort.h"
-#import "Utils.h"
+#include "QuickSort.h"
+#include "Utils.h"
 
 #define NUM_ELEMENTS 1000000
 #define RANDOM_TEST_DATA_SIZE 1000000

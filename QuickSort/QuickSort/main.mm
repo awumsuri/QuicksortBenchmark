@@ -6,16 +6,6 @@
 //  Copyright (c) 2015 Suri. All rights reserved.
 //
 
-
-
-//
-//  main.m
-//  QuickSort
-//
-//  Created by Suri on 5/23/15.
-//  Copyright (c) 2015 Suri. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 #include <stdlib.h>
@@ -26,7 +16,7 @@
 
 #define NUM_ELEMENTS 1000000
 #define RANDOM_TEST_DATA_SIZE 1000000
-#define USE_TEST_DATA false
+#define USE_TEST_DATA true
 
 void populateArray(int*& a){
     for (int i = 0; i < NUM_ELEMENTS; i++)

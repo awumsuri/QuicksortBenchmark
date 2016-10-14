@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A087B351B112F0000DE3588 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A087B331B112F0000DE3588 /* Utils.cpp */; };
+		3A5D6CDA1CF2AFF80040BECB /* random.txt in Sources */ = {isa = PBXBuildFile; fileRef = 3A338CBE1B13BBCC009DE30E /* random.txt */; };
+		3A5D6CDB1CF2B0130040BECB /* random.txt in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A338CBE1B13BBCC009DE30E /* random.txt */; };
+		3A5D6CDC1CF2B01D0040BECB /* random.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A338CBE1B13BBCC009DE30E /* random.txt */; };
 		3AFB3C9C1B10ADB8006F5390 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB3C9B1B10ADB8006F5390 /* main.mm */; };
 		3AFB3CA31B10AE27006F5390 /* QuickSort.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB3CA21B10AE27006F5390 /* QuickSort.mm */; };
 /* End PBXBuildFile section */
@@ -19,6 +22,7 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				3A5D6CDC1CF2B01D0040BECB /* random.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5D6CDB1CF2B0130040BECB /* random.txt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5D6CDA1CF2AFF80040BECB /* random.txt in Sources */,
 				3AFB3C9C1B10ADB8006F5390 /* main.mm in Sources */,
 				3A087B351B112F0000DE3588 /* Utils.cpp in Sources */,
 				3AFB3CA31B10AE27006F5390 /* QuickSort.mm in Sources */,
@@ -142,9 +148,9 @@
 		3AFB3C9D1B10ADB8006F5390 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -159,7 +165,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
@@ -168,6 +174,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -184,9 +191,9 @@
 		3AFB3C9E1B10ADB8006F5390 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -202,9 +209,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -213,6 +221,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
