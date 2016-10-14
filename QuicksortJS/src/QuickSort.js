@@ -5,7 +5,6 @@
 "use-strict"
 
 var isBrowser = global.navigator ? true : false;
-console.log("this window", global.navigator)
 
 function Quicksort (A, start, end, count) {
     if (start < end) {
