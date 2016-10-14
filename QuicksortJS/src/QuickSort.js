@@ -4,7 +4,8 @@
 
 "use-strict"
 
-this.window = this.window || {};
+var isBrowser = global.navigator ? true : false;
+console.log("this window", global.navigator)
 
 function Quicksort (A, start, end, count) {
     if (start < end) {
@@ -38,8 +39,8 @@ function Partition(A, start, end){
 }
 
 
-
-this.window.Quicksort = Quicksort;
+if(isBrowser)
+    window.Quicksort = Quicksort;
 
 
 module.exports.Quicksort = Quicksort;
