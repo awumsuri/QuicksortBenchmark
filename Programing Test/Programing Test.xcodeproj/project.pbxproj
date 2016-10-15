@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A17B4551DB0D0A70061129A /* BinarySearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A17B4531DB0D0A70061129A /* BinarySearch.cpp */; };
 		3A9749C01D0516EA00A22712 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A9749BF1D0516EA00A22712 /* main.cpp */; };
 		3A9749C81D051D3500A22712 /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A9749C71D051D3500A22712 /* LinkList.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A17B4531DB0D0A70061129A /* BinarySearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinarySearch.cpp; sourceTree = "<group>"; };
+		3A17B4541DB0D0A70061129A /* BinarySearch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinarySearch.hpp; sourceTree = "<group>"; };
 		3A9749BC1D0516EA00A22712 /* Programing Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Programing Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9749BF1D0516EA00A22712 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3A9749C61D051C4C00A22712 /* LinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				3A9749BF1D0516EA00A22712 /* main.cpp */,
 				3A9749C61D051C4C00A22712 /* LinkList.h */,
 				3A9749C71D051D3500A22712 /* LinkList.cpp */,
+				3A17B4531DB0D0A70061129A /* BinarySearch.cpp */,
+				3A17B4541DB0D0A70061129A /* BinarySearch.hpp */,
 			);
 			path = "Programing Test";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9749C01D0516EA00A22712 /* main.cpp in Sources */,
+				3A17B4551DB0D0A70061129A /* BinarySearch.cpp in Sources */,
 				3A9749C81D051D3500A22712 /* LinkList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +251,7 @@
 				3A9749C51D0516EA00A22712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

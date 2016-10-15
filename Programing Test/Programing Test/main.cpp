@@ -8,22 +8,33 @@
 
 #include <iostream>
 #include "LinkList.h"
-#define MAX 100000
+#include "BinarySearch.hpp"
+#define MAX 1000
 
+void TestBinarySearch() {
+    BinarySearch b({1,2,3,4,5,6,7,9,10,11,12,13,13434,324234234, 7687678687687}, 324234234);
+}
 
-int main(int argc, const char * argv[]) {
-    
+void TestLinkedList() {
     LinkList l;
+    
     int i = 0;
     for(i = 0; i <= MAX; i++){
         Node* n = new Node();
-        n->data = i;//+32 + 1;
-       // std::cout << "n-main" << &n << std::endl;
+        n->data = i;
         l.insert(n);
     }
     
-    //l.printNode();
-    std::cout << "kth:" << l.FindKthNode(8832)->data << std::endl;
+    l.printNode();
+    std::cout << "kth:" << l.FindKthNode(8)->data << std::endl;
 }
+
+int main(int argc, const char * argv[]) {
+   // TestLinkedList();
+    TestBinarySearch();
+    return 0;
+}
+
+
 
 

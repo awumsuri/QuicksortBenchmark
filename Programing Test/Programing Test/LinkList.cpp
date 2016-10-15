@@ -38,6 +38,7 @@ void LinkList::printNode(){
     }
 }
 
+//Kth Node from End
 Node* LinkList::FindKthNode(unsigned k){
     Node* kth = root;
     Node* head = root;

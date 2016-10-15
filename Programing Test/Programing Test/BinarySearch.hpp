@@ -10,5 +10,20 @@
 #define BinarySearch_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include <vector>
 
+typedef unsigned long data_c;
+
+class BinarySearch{
+private:
+    std::vector<data_c> data_m;
+    data_c find_value_m;
+    data_c length;
+    static const data_c NULL_C = NULL;
+    
+public:
+    BinarySearch(std::vector<data_c>, data_c);
+    void findIndex(data_c position, data_c startIndex, data_c endIndex);
+};
 #endif /* BinarySearch_hpp */

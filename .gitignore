@@ -2,4 +2,5 @@
 *.pbxproj
 *.xcworkspace
 DerivedData/
+QuicksortSwift/DerivedData/
 node_modules/

@@ -7,7 +7,6 @@
 "use-strict"
 
 var isBrowser = global.navigator ? true : false;
-console.log("this window", global.navigator)
 
 function Quicksort (A, start, end, count) {
     if (start < end) {
@@ -46,10 +45,6 @@ if(isBrowser)
 
 
 module.exports.Quicksort = Quicksort;
-
-
-
-
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[1]);
