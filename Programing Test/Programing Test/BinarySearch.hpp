@@ -25,5 +25,6 @@ private:
 public:
     BinarySearch(std::vector<data_c>, data_c);
     void findIndex(data_c position, data_c startIndex, data_c endIndex);
+    static std::vector<data_c>* transForm2Dto1DMatrix(std::vector<std::vector<data_c>>);
 };
 #endif /* BinarySearch_hpp */
