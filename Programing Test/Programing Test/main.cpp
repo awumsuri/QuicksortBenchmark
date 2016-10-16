@@ -9,24 +9,25 @@
 #include <iostream>
 #include "LinkList.h"
 #include "BinarySearch.hpp"
-#define MAX 1000
+#define MAX 10
 
 void TestBinarySearch2Dto1DMatri() {
     
-    std::vector<std::vector<data_c>> a;
+    data_c Max = 1000;
     
-    for(int i = 0; i < 10; i++){
-        std::vector<data_c>* temp = new std::vector<data_c>();
-        for(int j = 0; j < 10; j++){
-            temp->push_back(i*10 + j);
+    std::vector<std::vector<data_c>> a;    
+    
+    for(int i = 0; i < Max; i++){
+        std::vector<data_c>* temp = new std::vector<data_c>()   ;
+        for(int j = 0; j < Max; j++){
+            temp->push_back(i*Max + j);
         }
         a.push_back(*temp);
     }
     
-    std::vector<data_c>* b = BinarySearch::transForm2Dto1DMatrix(a);
+    std::vector<data_c>* b = BinarySearch::transForm2Dto1DMatrix(a, Max, Max);
     
-    BinarySearch c(*b, 90);
-    
+    BinarySearch c(*b, 9733);    
 }
 
 void TestBinarySearch() {
@@ -36,7 +37,7 @@ void TestBinarySearch() {
         a.push_back(i);
     }
     
-    BinarySearch c(a, 9210);
+    BinarySearch c(a, 1);
 }
 
 void TestLinkedList() {

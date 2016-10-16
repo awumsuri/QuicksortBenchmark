@@ -21,7 +21,19 @@ std::vector<data_c>* BinarySearch::transForm2Dto1DMatrix(std::vector<std::vector
     for(int i = 0; i < a.size(); i++) {
         std::vector<data_c> temp = a[i];
         for(int j = 0; j < temp.size(); j++)
-            newA->push_back((i*10)+j);
+            newA->push_back((i*temp.size())+j);
+    }
+    
+    return newA;
+}
+
+std::vector<data_c>* BinarySearch::transForm2Dto1DMatrix(std::vector<std::vector<data_c>> a, data_c m, data_c n) {
+    std::vector<data_c>* newA = new std::vector<data_c>();
+    newA->reserve(m*n);
+    for(int i = 0; i < a.size(); i++) {
+        std::vector<data_c> temp = a[i];
+        for(int j = 0; j < temp.size(); j++)
+            newA->push_back((i*temp.size())+j);
     }
     
     return newA;
