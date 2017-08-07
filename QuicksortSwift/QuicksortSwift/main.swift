@@ -17,7 +17,7 @@ if(USE_TEST_DATA){
     Utils.loadFile(A: &A, path: path!);
 }
 else{    
-    for index in 0..<NUM_ELEMENTS {
+    for _ in 0..<NUM_ELEMENTS {
         let r   =  arc4random_uniform(UInt32(NUM_ELEMENTS)) + 1;
         A.append(Int(r));
     }

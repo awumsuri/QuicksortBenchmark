@@ -1,26 +1,2 @@
 [
- {
-  "file": "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift",
-  "offset": 271,
-  "remove": 3,
-  "text": " ",
- },
- {
-  "file": "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift",
-  "offset": 284,
-  "remove": 9,
-  "text": "n",
- },
- {
-  "file": "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift",
-  "offset": 298,
-  "remove": 1,
-  "text": "(f",
- },
- {
-  "file": "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift",
-  "offset": 309,
-  "remove": 1,
-  "text": ": ",
- }
 ]

@@ -1,6 +1,7 @@
-version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "a22b5099cc4f32dd73d4dcb07e245162"
-build_time: [528686771, 324893000]
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "c17239d421661262b1233839f443bee2"
+build_time: [548242574, 155378000]
 inputs:
   "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/main.swift": [9223372036854775807, 0]
   "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/Quicksort.swift": [9223372036854775807, 0]
+  "/Users/Mtui/trading/src/QuicksortBenchmark/QuicksortSwift/QuicksortSwift/Utils.swift": [9223372036854775807, 0]

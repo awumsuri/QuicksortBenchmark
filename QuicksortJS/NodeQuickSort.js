@@ -2,9 +2,9 @@
  * Created by Mtui on 5/24/15.
  */
 
-var qs = require("./QuickSort");
+var qs = require("./src/QuickSort");
 var fs = require("fs");
-var raw = fs.readFileSync('random.txt','utf8');
+var raw = fs.readFileSync('./src/data/random.txt','utf8');
 
 var a  = raw.split("\n");
 
