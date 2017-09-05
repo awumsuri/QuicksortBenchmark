@@ -11,16 +11,14 @@
 
 @interface QuickSort : NSObject
 
-//- (NSArray *)sort:(NSMutableArray *)input useGCD:(BOOL)useGCD;
-//- (BOOL)testArray:(NSArray *)input;
 - (void) Quicksort:(NSMutableArray*)A start:(int)start end:(int)end count:(int*)count;
 
 - (int) Partition:(NSMutableArray*)A partiton:(int)start length:(int)end;
 - (void) Swap:(NSMutableArray*)A first:(int)first second:(int)second;
 
-- (void) Quicksort3:(int**)A start:(int)start end:(int)end count:(int*)count;
-- (int) Partition3:(int*)A partiton:(int)start length:(int)end;
-- (void) Swap3:(int*)A first:(int)first second:(int)second;
+- (void) Quicksort_C_Array:(int**)A start:(int)start end:(int)end count:(int*)count;
+- (int) Partition_C_Array:(int*)A partiton:(int)start length:(int)end;
+- (void) Swap_C_Array:(int*)A first:(int)first second:(int)second;
 
 @end
 void QuickSortCplus(int *& , int , int, int&);

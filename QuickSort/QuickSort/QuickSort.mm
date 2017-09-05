@@ -41,33 +41,33 @@
     }
 }
 
--(void) Swap3:(int*)A first:(int)first second:(int)second{
+-(void) Swap_C_Array:(int*)A first:(int)first second:(int)second{
     int temp        = A[first];
     A[first]        = A[second];
     A[second]       = temp;
 }
 
--(int) Partition3:(int*)A partition:(int)partition length:(int)length{
+-(int) Partition_C_Array:(int*)A partition:(int)partition length:(int)length{
     int pivot   = A[length];
     int i       = (partition-1);
     
     for (int j = partition; j <= length-1; j++) {
         if (A[j] <= pivot) {
             i++;
-            [self Swap3:A first:i second:j];
+            [self Swap_C_Array:A first:i second:j];
         }
     }
-    [self Swap3:A first:(i+1) second:length];
+    [self Swap_C_Array:A first:(i+1) second:length];
     
     return (i + 1);
 }
 
--(void)  Quicksort3:(int**)A start:(int)start end:(int)end count:(int*)count{
+-(void)  Quicksort_C_Array:(int**)A start:(int)start end:(int)end count:(int*)count{
     if(start < end){
         *count  += 1;
-        int p       = [self Partition3:*A partition:start length:end];
-        [self Quicksort3:A start:start end:(p-1) count:count];
-        [self Quicksort3:A start:p+1 end:end count:count];        
+        int p       = [self Partition_C_Array:*A partition:start length:end];
+        [self Quicksort_C_Array:A start:start end:(p-1) count:count];
+        [self Quicksort_C_Array:A start:p+1 end:end count:count];
     }
 }
 

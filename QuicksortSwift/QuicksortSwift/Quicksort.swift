@@ -25,7 +25,7 @@ class Quicksort {
                 index += 1;
                 Swap(&A, first: index, second: i)
             }
-           // print("index:\(index) A:\(A[end]) pivot:\(pivot)");
+            // print("index:\(index) A:\(A[end]) pivot:\(pivot)");
         }
         Swap(&A, first: index+1, second: end);
         
@@ -41,5 +41,5 @@ class Quicksort {
         }
     }
 }
-    
+
 

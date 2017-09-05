@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:NUM_ELEMENTS];
-        QuickSort* quicksort3    = [[QuickSort alloc] init];;
+        QuickSort* quicksort    = [[QuickSort alloc] init];;
         
         int* a;
         int* b;
@@ -65,7 +65,7 @@ int main(int argc, const char * argv[]) {
          *****************/
         
         NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
-        [quicksort3 Quicksort:data start:0 end:iterations-1 count:&count];
+        [quicksort Quicksort:data start:0 end:iterations-1 count:&count];
         NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
         NSLog(@"Obj-C Took %f seconds to sort %d elements. Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         
@@ -74,7 +74,7 @@ int main(int argc, const char * argv[]) {
          *****************/
         count   = 0;
         start = [NSDate timeIntervalSinceReferenceDate];
-        [quicksort3 Quicksort3:&b start:0 end:iterations-1 count:&count];
+        [quicksort Quicksort_C_Array:&b start:0 end:iterations-1 count:&count];
         end = [NSDate timeIntervalSinceReferenceDate];
         NSLog(@"ObjC C Array Took %f seconds to sort %d elements.  Number of (Quicksort call) Iterations: %d", (end - start), NUM_ELEMENTS, count);
         if(NUM_ELEMENTS <= 100)
@@ -86,8 +86,8 @@ int main(int argc, const char * argv[]) {
          *****************/
         if(NUM_ELEMENTS <= 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed UnSort Array");
-        ArrayFunctionPointer_QuickSort quicksort     = QuickSortCplus;
-        Utils::timeFunction(quicksort,a, 0, iterations-1, count, "QuickSort Timing");
+        ArrayFunctionPointer_QuickSort quicksortC     = QuickSortCplus;
+        Utils::timeFunction(quicksortC,a, 0, iterations-1, count, "QuickSort Timing");
         if(NUM_ELEMENTS <= 100)
             Utils::PrintArrayIntegers(a, NUM_ELEMENTS, "Printed Sort Array");
        // else
